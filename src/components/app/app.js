@@ -8,6 +8,8 @@ import ErrorIndicator from '../error-indicator';
 
 import ItemDetails, { Record } from '../item-details';
 import Row from '../row';
+import { StarshipList } from '../sw-components';
+import { PersonDetails, PlanetDetails } from '../sw-components';
 
 import './app.css'
 
@@ -78,6 +80,8 @@ export default class App extends Component {
         </button>
 
         <PeoplePage />
+        <PersonDetails itemId={5} />
+        <PlanetDetails itemId={13} />
 
         <Row
           left={personDetails}

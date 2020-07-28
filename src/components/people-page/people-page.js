@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ItemList from '../item-list';
+import { PersonList } from '../sw-components';
 import ItemDetails from '../item-details';
 import Row from '../row'
 import ErrorBoundry from '../error-boundry'
@@ -23,15 +23,15 @@ export default class PeoplePage extends Component {
   };
 
   render() {
-    const itemList = (
-      <ItemList
+    const personList = (
+      <PersonList
         onItemSelected={this.onPersonSelected}>
 
         {(i) => (
           `${i.name} (${i.birthYear})`
         )}
 
-      </ItemList>
+      </PersonList>
     )
 
     const itemDetails = (
@@ -41,7 +41,7 @@ export default class PeoplePage extends Component {
     )
 
     return(
-      <Row left={itemList} right={itemDetails} />
+      <Row left={personList} right={itemDetails} />
     );
   };
 };
