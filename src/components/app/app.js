@@ -10,6 +10,7 @@ import ItemDetails, { Record } from '../item-details';
 import Row from '../row';
 import { StarshipList } from '../sw-components';
 import { PersonDetails, PlanetDetails } from '../sw-components';
+import { SwapiServiceProvider } from '../swapi-service-context';
 
 import './app.css'
 
@@ -69,26 +70,28 @@ export default class App extends Component {
     )
 
     return (
-      <div className="todo-app">
-        <Header />
-        {planet}
+      <SwapiServiceProvider value={this.swapiService}>
+        <div className="todo-app">
+          <Header />
+          {planet}
 
-        <button
-          className="toggle-planet btn btn-warning btn-lg"
-          onClick={this.toggleRandomPlanet}>
-          Toggle Random Planet
-        </button>
+          <button
+            className="toggle-planet btn btn-warning btn-lg"
+            onClick={this.toggleRandomPlanet}>
+            Toggle Random Planet
+          </button>
 
-        <PeoplePage />
-        <PersonDetails itemId={5} />
-        <PlanetDetails itemId={13} />
-        <StarshipList />
+          <PeoplePage />
+          <PersonDetails itemId={5} />
+          <PlanetDetails itemId={13} />
+          <StarshipList />
 
-        <Row
-          left={personDetails}
-          right={starshipDetails} />
+          <Row
+            left={personDetails}
+            right={starshipDetails} />
 
-      </div>
+        </div>
+      </SwapiServiceProvider>
     );
   };
 };
