@@ -82,6 +82,7 @@ export default class App extends Component {
         <PeoplePage />
         <PersonDetails itemId={5} />
         <PlanetDetails itemId={13} />
+        <StarshipList />
 
         <Row
           left={personDetails}
